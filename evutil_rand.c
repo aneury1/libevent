@@ -71,7 +71,7 @@ evutil_free_secure_rng_globals_locks(void)
 static void
 ev_arc4random_buf(void *buf, size_t n)
 {
-#if defined(EVENT__HAVE_ARC4RANDOM_BUF) && !defined(__APPLE__)
+#if defined(_EVENT_HAVE_ARC4RANDOM_BUF) && !defined(__APPLE__)
 	arc4random_buf(buf, n);
 	return;
 #else
